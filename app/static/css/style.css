@@ -1,0 +1,13 @@
+.hero {
+    background-size: cover;
+    background-blend-mode: overlay;
+}
+
+.last-vacancies {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.skills-card {
+    width: 60rem;
+}

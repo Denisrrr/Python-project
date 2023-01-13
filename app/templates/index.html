@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Главная{% endblock %}
+{% block content %}
+<div class="row hero" style="background-image: url({{ profession.header_bg.url }}), linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));">
+    <div class="col p-5 mt-2 text-center text-white mx-auto">
+        <h1>{{ profession.name }}</h1>
+        <p class="lead">
+            {{ profession.desc }}
+        </p>
+    </div>
+</div>
+<div class="row bg-light mt-4">
+    <h2 class="mb-4">О языке PHP</h2>
+    <div class="col p-3">
+        <h3 class="fs-4 mb-4">Где применяется</h3>
+        <p>
+            {{ profession.where_used }}
+        </p>
+        <h3 class="fs-4 mb-4">Когда появился</h3>
+        <p>
+            {{ profession.when_appeared }}
+        </p>
+    </div>
+    <div class="col">
+        <img class="img-fluid" src="{{ profession.about_img.url }}">
+    </div>
+</div>
+<div class="row bg-light mt-4">
+    <h2 class="text-end mb-4">Что должен уметь {{ profession.name }}</h2>
+    <div class="col">
+        <img class="img-fluid" src="{{ profession.skills_img.url }}">
+    </div>
+    <div class="col">
+        {{ profession.skills | safe }}
+    </div>
+</div>
+<div class="row bg-light mt-4">
+    <h2 class="text-center mb-4">Уровни PHP-программистов по опыту работы</h2>
+    <div class="col">
+        {{ profession.grades | safe }}
+    </div>
+</div>
+<div class="row bg-light mt-4">
+    <h2 class="text-center mb-4">Как стать PHP-программистом</h2>
+    <div class="col">
+        {{ profession.how_to_become | safe }}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}География{% endblock %}
+{% block content %}
+<div class="row text-center mt-2">
+    <h2>Статистика по городам</h2>
+    <div class="col">
+        <img class="img-fluid p-5" src="{{ statistics.plot_img.url }}">
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        {{ statistics.salary_table | safe }}
+    </div>
+    <div class="col">
+        {{ statistics.fraction_table | safe }}
+    </div>
+</div>
+{% endblock %}

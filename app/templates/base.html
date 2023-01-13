@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+    <link href="{% static 'css/bootstrap/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2 bg-dark min-vh-100">
+            <a href="/" class="d-flex pb-3 text-decoration-none fs-5 text-white">PHP-программист</a>
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="/">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/salary/' %}active{% endif %}" href="/salary/">Востребованность</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/area/' %}active{% endif %}" href="/area/">География</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/skills/' %}active{% endif %}" href="/skills/">Навыки</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/last-vacancies/' %}active{% endif %}" href="/last-vacancies/">Последние вакансии</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-10 bg-light">
+            {% block content %}{% endblock %}
+            <footer class="row bg-secondary p-4 mt-4 text-white">
+                <p>Риянов Денис Рашидович, РИ-210932</p>
+            </footer>
+        </div>
+    </div>
+</div>
+</body>
+</html>

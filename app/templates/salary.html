@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Востребованность{% endblock %}
+{% block content %}
+<div class="row text-center mt-2">
+    <h2>Статистика по годам для профессии {{ statistics.profession.name }}</h2>
+    <div class="col">
+        <img class="img-fluid p-5" src="{{ statistics.plot_img.url }}">
+        {{ statistics.table | safe }}
+    </div>
+</div>
+{% endblock %}
